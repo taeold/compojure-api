@@ -800,6 +800,23 @@
         status => 200
         (-> spec :definitions :Kikka :properties keys) => (keys Kikka)))))
 
+(fact "order of the routes should be kept"
+  (let [app (api (swagger-docs)
+                 (GET* "/1" [] (ok))
+                 (GET* "/2" [] (ok))
+                 (GET* "/3" [] (ok))
+                 (GET* "/4" [] (ok))
+                 (GET* "/5" [] (ok))
+                 (GET* "/6" [] (ok))
+                 (GET* "/7" [] (ok))
+                 (GET* "/8" [] (ok))
+                 (GET* "/9" [] (ok))
+                 (GET* "/10" [] (ok))
+                 )]
+    (let [[status spec] (get* app "/swagger.json")]
+      status => 200
+      (keys (-> spec :paths)) => (map #(keyword (str "/" (inc %))) (range 10)))))
+
 ; https://github.com/metosin/compojure-api/issues/98
 ; https://github.com/metosin/compojure-api/issues/134
 (fact "basePath"

@@ -19,7 +19,9 @@
 (defroutes* ordered-routes
   (context* "/ordered" []
     :tags ["ordered"]
-    (GET* "/" []
+    ;; Schema validation doesn't work yet for ordered-map
+    #_
+    (GET* "/ordered-returns" []
       :return Ordered
       :summary "Ordered data"
       (ok
@@ -31,4 +33,25 @@
           :e "e"
           :f "f"
           :g "g"
-          :h "h")))))
+          :h "h")))
+    (GET* "/1" []
+      (ok))
+    (GET* "/2" []
+      (ok))
+    (GET* "/3" []
+      (ok))
+    (GET* "/4" []
+      (ok))
+    (GET* "/5" []
+      (ok))
+    (GET* "/6" []
+      (ok))
+    (GET* "/7" []
+      (ok))
+    (GET* "/8" []
+      (ok))
+    (GET* "/9" []
+      (ok))
+    (GET* "/10" []
+      (ok))
+    ))

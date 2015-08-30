@@ -16,6 +16,7 @@
                  [metosin/ring-swagger "0.21.0-SNAPSHOT"]
                  [metosin/schema-tools "0.5.2"]
                  [metosin/ring-middleware-format "0.6.0"]
+                 [org.flatland/ordered "1.5.3"]
                  [backtick "0.3.3"]
                  [metosin/ring-swagger-ui "2.1.2"]]
   :profiles {:uberjar {:aot :all
