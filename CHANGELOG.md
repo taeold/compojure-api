@@ -1,6 +1,6 @@
-## Unreleased
+## 1.0.0-SNAPSHOT
 
-**[compare](https://github.com/metosin/compojure-api/compare/0.24.3...master)**
+* TODO
 
 * Updated deps:
 
